@@ -1,12 +1,28 @@
+# ============================================
+#  =  Server
+# ============================================
 server:
   port: 8080
   servlet:
     context-path: /v1
 
+# ============================================
+#  =  Spring
+# ============================================
 spring:
+  profiles:
+    active: dev
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3307/bluemeet?createDatabaseIfNotExist=true&serverTimezone=UTC&useSSL=false&allowPublickeyRetrieval=true
     username: root
     password: admin
     type: com.zaxxer.hikari.HikariDataSource
+
+# ============================================
+#  =  Logging
+# ============================================
+logging:
+  level:
+    org.springframework: INFO
+    org.flywaydb: INFO
